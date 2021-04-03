@@ -25,7 +25,7 @@ p <- p1 +
        caption = "#30DayChartChallenge   |   @saraahannes\n") +
   theme(
     plot.title = element_text(family='Iced Tea', color='darkgray', size=12.3),
-    plot.subtitle = element_text(family='Iced tea', color='pink', size=10),
+    plot.subtitle = element_text(family='Iced Tea', color='pink', size=10),
     plot.caption = element_text(family='Bahnschrift', hjust = 0.5, vjust = 0.5, size=5, color='darkgray')
   )
 
