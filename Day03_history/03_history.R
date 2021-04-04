@@ -5,7 +5,9 @@ library(ggridges)
 library(ggstream)
 
 # Load data
-who <- read.csv("who_suicide_statistics.csv")
+# Data courtesy of WHO and Szamil
+# obtained from : https://www.kaggle.com/szamil/who-suicide-statistics
+who <- read.csv("https://raw.githubusercontent.com/SarahHannes/30DayChartChallenge/main/Day03_history/who_suicide_statistics.csv")
 
 # Preprocessing
 all <- who %>% 
