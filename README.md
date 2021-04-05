@@ -1,5 +1,8 @@
 # 30DayChartChallenge
 
+### Day 05: Slope
+<a href="/Day05_slope/05_slope.R"> <img src="/Day05_slope/05_slope.png" width="900"></a>
+
 ### Day 04: Magical
 <a href="/Day04_magical/04_magical.R"> <img src="/Day04_magical/04_magical.png" width="900"></a>
 
