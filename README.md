@@ -6,7 +6,7 @@
 ### Day 03: History
 <a href="/Day03_history/03_history.R"> <img src="/Day03_history/03_history.png" width="900"></a>
 <br>
-Extra: Reordered Age group by Ascending Total Suicides No
+Extra: Reordered Age group by Ascending Totals
 <br>
 <a href="/Day03_history/03_history.R"> <img src="/Day03_history/03_history_reorderedAge.png" width="900"></a>
 
