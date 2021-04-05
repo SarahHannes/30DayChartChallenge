@@ -1,5 +1,8 @@
 # 30DayChartChallenge
 
+### Day 04: Magical
+<a href="/Day04_magical/04_magical.R"> <img src="/Day04_magical/04_magical.png" width="900"></a>
+
 ### Day 03: History
 <a href="/Day03_history/03_history.R"> <img src="/Day03_history/03_history.png" width="900"></a>
 <br>
