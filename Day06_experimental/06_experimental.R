@@ -8,12 +8,12 @@ bgcol <- "#f8e0d0"
 textcol <- "#ac5c3c"
 
 # Load data & plot
-p1 <- read_csv("coord.csv") %>%
+p1 <- read_csv("https://raw.githubusercontent.com/SarahHannes/30DayChartChallenge/main/Day06_experimental/coord.csv") %>%
 ggplot() +
   geom_polygon(aes(x=x, y=y, group=1), color=fgcol, fill=fgcol) +
   scale_y_reverse() +
   labs(
-    caption=" © Mondelez International | #30DayChartChallenge | @saraahannes"
+    caption="Â© Mondelez International | #30DayChartChallenge | @saraahannes"
   ) +
   theme_void() +
   theme(
@@ -23,3 +23,9 @@ ggplot() +
 
 # Save plot
 ggsave("06_experimental.png", plot = p1, type = 'cairo', width = 8, height = 6, dpi = 300, units = "in", bg =bgcol)
+
+# Footnote ---------------------
+# Coordinates obtained by mousing over the desired picture using
+# https://www.mobilefish.com/services/record_mouse_coordinates/record_mouse_coordinates.php
+# Thank you for the awesome free tool!
+# All rights belong to its rightful owners
