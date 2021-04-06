@@ -1,5 +1,8 @@
 # 30DayChartChallenge
 
+### Day 06: Experimental
+<a href="/Day06_experimental/06_experimental.R"> <img src="/Day06_experimental/06_experimental.png" width="900"></a>
+
 ### Day 05: Slope
 <a href="/Day05_slope/05_slope.R"> <img src="/Day05_slope/05_slope.png" width="900"></a>
 
