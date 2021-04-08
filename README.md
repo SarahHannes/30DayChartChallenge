@@ -1,5 +1,8 @@
 # 30DayChartChallenge
 
+### Day 07: Physical
+<img src="/Day07_physical/07_physical.jpg" width="900">
+
 ### Day 06: Experimental
 <a href="/Day06_experimental/06_experimental.R"> <img src="/Day06_experimental/06_experimental.png" width="900"></a>
 
