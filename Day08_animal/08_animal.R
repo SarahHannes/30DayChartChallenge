@@ -19,7 +19,7 @@ flightcol <- '#cccccc'
 # Load data
 # Data courtesy of Gabriel Preda & Xeno-Canto
 # Obtained from https://www.kaggle.com/gpreda/xenocanto-birds-from-romania
-bird <- read.csv("birds_romania.csv")
+bird <- read.csv("https://raw.githubusercontent.com/SarahHannes/30DayChartChallenge/main/Day08_animal/birds_romania.csv")
 
 # World map
 world <- map_data(map='world') %>%
@@ -32,7 +32,7 @@ regionmap1 <- world %>%
   ungroup()
 
 # Image courtesy of clipart-library.com
-flight <- image_read("flight2.png") %>%
+flight <- image_read("https://raw.githubusercontent.com/SarahHannes/30DayChartChallenge/f2f5a26b2e09b0100c57f9ec7b92ac34f27be370/Day08_animal/flight2.png") %>%
   image_background("none") %>%
   image_fill(flightcol, point = "+100+100", fuzz = 100)
 
