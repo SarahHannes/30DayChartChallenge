@@ -1,5 +1,8 @@
 # 30DayChartChallenge
 
+### Day 08: Animal
+<a href="/Day08_animal/08_animal.R"> <img src="/Day08_animal/08_animal.png" width="900"></a>
+
 ### Day 07: Physical
 <br>Chart made on the good old PowerPoint - so no code for Day 7😁
 <img src="/Day07_physical/07_physical.jpg" width="900">
