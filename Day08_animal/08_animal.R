@@ -6,10 +6,11 @@ library(ggfx)
 library(ggalt)
 library(ggforce)
 library(magick)
+#library(RColorBrewer)
 
 # Palette & fonts
 font <- 'Bahnschrift'
-mycolors <- colorRampPalette(brewer.pal(8, "Set2"))(135) # expand color palettes
+#mycolors <- colorRampPalette(brewer.pal(8, "Set2"))(135) # expand color palettes (Not in use)
 mapcol <- c("#242424", "#B4B4B4", '#828282')
 bgcol <- "#fcfcfc"
 pathcol <- '#a8b8d1'
