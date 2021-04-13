@@ -1,7 +1,8 @@
 # 30DayChartChallenge
 
 ### Day 10: Abstract
-<br> Experimenting using the awesome generativeart package
+Experimenting using the awesome generativeart package
+<br>
 <a href="/Day10_abstract/10_abstract.R"> <img src="/Day10_abstract/10_abstract.png" width="400"></a>
 <a href="/Day10_abstract/10_abstract.R"> <img src="/Day10_abstract/10_abstract_02.png" width="400"></a>
 
