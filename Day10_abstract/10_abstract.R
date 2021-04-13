@@ -3,8 +3,10 @@ extrafont::loadfonts(device = "win", quiet=T)
 library(tidyverse)
 library(generativeart)
 library(here)
-library(rex)
 library(magick)
+
+#---------------- as obtained from generativeart docs -------------------
+# Ref: https://github.com/cutterkom/generativeart
 
 # set the paths
 IMG_DIR <- "img/"
@@ -29,11 +31,14 @@ my_formula2 <- list(
   y = quote(runif(1, -0.1, 1) * y_i^3 - cos(x_i^2))
 )
 
-
+# Print images into stated directory
 generativeart::generate_img(formula = my_formula, nr_of_img = 2, polar = T, color = "#7FFFD4", background_color = NA)
 generativeart::generate_img(formula = my_formula, nr_of_img = 3, polar = T, color = "#FFF8DC", background_color = NA)
 generativeart::generate_img(formula = my_formula2, nr_of_img = 3, polar = F, color = "#DDA0DD", background_color = NA)
 
+#---------------------------------------------------
+
+# Get images
 img <- c(
   here::here("img", "handpicked", '3.png'),
   here::here("img", "handpicked", '4.png'),
@@ -45,25 +50,24 @@ img <- c(
   here::here("img", "handpicked", '7.png')
 )
 
-img9 <- here::here("img", "handpicked", '9.png')
-
-image9 <- image_read(img9) %>%
-  image_resize('3000x3000')
-
 image <- image_read(img) %>%
   image_background("none")
 
+# Reading this in individually because I want to resize this only lol
+img9 <- here::here("img", "handpicked", '9.png')
+image9 <- image_read(img9) %>%
+  image_resize('3000x3000')
+
 all <- c(image, image9)
 
+# Combine both images
 final <- image_flatten(all, 'Minus')
+
+# Save combined images
 image_write(final, path = "10_abstract.png", format = "png")
 
-print(image)
-
+# for animation (not in use)
 animation <- image_animate(image, fps = 2, optimize = TRUE)
 print(animation)
 
-# get images
-ggplot() +
-  annotation_raster(image[1], xmin = 100, xmax = 250, ymin = 100, ymax = 300) +
-  coord_cartesian(xlim=c(100, 500), ylim=c(100, 500))
+# Thank you for the awesome Generativeart package!
