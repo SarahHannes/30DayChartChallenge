@@ -1,8 +1,8 @@
 # 30DayChartChallenge
 
 ### Day 10: Abstract
-<a href="/Day10_abstract/10_abstract.R"> <img src="/Day10_abstract/10_abstract.png" width="450"></a>
-<a href="/Day10_abstract/10_abstract.R"> <img src="/Day10_abstract/10_abstract_02.png" width="450"></a>
+<a href="/Day10_abstract/10_abstract.R"> <img src="/Day10_abstract/10_abstract.png" width="350"></a>
+<a href="/Day10_abstract/10_abstract.R"> <img src="/Day10_abstract/10_abstract_02.png" width="350"></a>
 
 ### Day 08: Animal
 <a href="/Day08_animal/08_animal.R"> <img src="/Day08_animal/08_animal.png" width="900"></a>
