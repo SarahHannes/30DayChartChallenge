@@ -2,6 +2,7 @@
 
 Contributions made for <a href="https://twitter.com/30DayChartChall">#30DayChartChallenge</a>, a weekly A #DataViz challenge by @CedScherer and @dr_xeo.
 By participating, I aim to improve my R language fluency especially in using {tidyverse} package, while learning, discovering and improving my data storytelling fundamentals.
+<br>Above all, this is just a space for me to explore, experiment and have fun! 
 
 ## Day 10: Abstract
 Experimenting using the awesome generativeart package
