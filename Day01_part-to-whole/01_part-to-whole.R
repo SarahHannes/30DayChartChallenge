@@ -1,3 +1,9 @@
+#-----
+# Day 01 #30DayChartChallenge
+# Author: Sarah H
+# Date: 2 Apr 2021
+#-----
+
 # Import Libraries
 extrafont::loadfonts(device = "win", quiet=T)
 library(tidyverse)
