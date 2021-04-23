@@ -4,6 +4,9 @@ Contributions made for <a href="https://twitter.com/30DayChartChall">#30DayChart
 By participating, I aim to improve my R language fluency especially in using {tidyverse} package, while learning, discovering and improving my data storytelling fundamentals.
 <br>Above all, this is just a space for me to explore, experiment and have fun! 
 
+## Day 12: Strips
+<a href="/Day12_strips/12_strips.R"> <img src="/Day12_strips/12_strips.png" width="900"></a>
+
 ## Day 10: Abstract
 Experimenting using the awesome generativeart package
 <br>
