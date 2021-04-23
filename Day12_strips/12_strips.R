@@ -1,3 +1,10 @@
+#-----
+# Day 12 #30DayChartChallenge
+# Author: Sarah H
+# Date: 23 Apr 2021
+#-----
+# Heavily inspired by @flowingdata, @HannahMBuckland and other supeR users who kindly share their wonderful works! Thank you!
+
 # Load libraries
 extrafont::loadfonts(device = "win", quiet=T)
 library(tidyverse)
@@ -8,14 +15,23 @@ showtext_auto()
 font_add_google("Oswald", "Oswald")
 font_add_google("Raleway", "Raleway")
 
+# Load data
 post_offices <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-04-13/post_offices.csv')
 
+# Fonts and palette
+font <- c('Oswald', 'Raleway')
+annoscol <- c('white', 'gainsboro', 'darkgray', 'black')
+bgcol <- "#fcfcfc"
+pal <- c('#636db5', '#91d9cd')
+
+# Pre-processing
 est <- post_offices %>%
   filter(gnis_feature_class=='Post Office', !id %in% c(128882, 145399, 145448), !is.na(established)) %>% #filter out NAs est years & 3 post offices which has slightly (maybe) weird est date (ie they were est. in the year of 186, 189, 192)
   group_by(established) %>%
   count() %>%
   ungroup()
 
+# Title tibble
 title <- tibble(
   label=c("<span style='color:darkgray'>
           BY YEAR</span>
@@ -23,9 +39,9 @@ title <- tibble(
           **POST  OFFICES  ESTABLISHMENT  TIMELINE  ACROSS  U.S.**</span>
           <span style='color:darkgray'><br>& OTHER  NOTABLE  EVENTS</span>
           </style>
-          ")
-)
+          "))
 
+# Events annotation tibble
 events <- c(
   `1918` = 'Took over airmail service from the U.S. Army Air Service',
   `1937` = 'Oversaw the shipment of gold to U.S. Bullion Depository',
@@ -36,6 +52,7 @@ events <- c(
   `1914` = '1st (and last) shipment of a living child'
 ) %>% as.data.frame()
 
+# Clean up events annotation tibble
 events_cl <- events %>%
   mutate(year = row.names(events)) %>%
   janitor::clean_names() %>%
@@ -43,22 +60,13 @@ events_cl <- events %>%
   summarise(year, text) %>%
   arrange(year) %>%
   mutate(position=ifelse(year<1897, 'left', 'right'))
-  
 
-font <- c('Oswald', 'Raleway')
-annoscol <- c('white', 'gainsboro', 'darkgray', 'black')
-bgcol <- "#fcfcfc"
-pal <- c('#636db5', '#91d9cd')
-
+# Plot
 p1 <- ggplot() +
   # Title
   geom_richtext(data=title, aes(x=1900, y=2, label=label), hjust=0.5, family=font[1], lineheight=0.3,  color=NA, fill=NA, size=13) +
   
-  # Border
-  #geom_rect(aes(xmin=1800, xmax=2000, ymin=0, ymax=1), fill=NA, color=bgcol, alpha=0.5, size=4) +
-  
   # Strip
-  #geom_col(data=est, aes(x=established, y=1, fill=n)) + #not interpolated
   geom_tile(data=est %>% filter(established>=1800), aes(x=established, y=0.5, fill=n)) +
   
   # X Axis Labels
@@ -72,7 +80,6 @@ p1 <- ggplot() +
   geom_segment(aes(x=1900, xend=1900, y=1.43, yend=0), color=annoscol[2], linetype='dashed', size=0.3, alpha=0.5) +
   geom_segment(aes(x=c(1800, 2000), xend=c(1800, 2000), y=1.43, yend=1), color=annoscol[2], linetype='dashed', size=0.3, alpha=0.5) +
   geom_segment(aes(x=c(1650, 1850, 1950), xend=c(1650, 1850, 1950), y=1.23, yend=0), color=annoscol[2], linetype='dashed', size=0.3, alpha=0.5) +
-  
   
   # Events annotations
   geom_text_repel(data=events_cl %>% filter(position=='left'), 
@@ -113,12 +120,11 @@ p1 <- ggplot() +
                   segment.color=annoscol[3],
                   family=font[2]) +
   
+  # Annotation for blanks
   geom_text(aes(x=1998, y=-0.1, label='*'), size=15, color=annoscol[4]) +
   
-  scale_fill_gradientn(colours=pal) +
-  
-  # used xlim instead of coord_cartesian so that the strip is centered
-  xlim(1790, 2010) +
+  scale_fill_gradientn(colours=pal) +  
+  xlim(1790, 2010) + # used xlim instead of coord_cartesian so that the strip is centered
   coord_cartesian(ylim=c(-1,2.3), expand = F, clip = 'off') +
   labs(
     caption="<span style='font-size:35pt; color:black'>(*) Blank bands depict years without data</span>
