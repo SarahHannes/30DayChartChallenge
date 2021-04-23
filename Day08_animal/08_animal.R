@@ -1,3 +1,9 @@
+#-----
+# Day 08 #30DayChartChallenge
+# Author: Sarah H
+# Date: 11 Apr 2021
+#-----
+
 # Load libraries
 extrafont::loadfonts(device = "win", quiet=T)
 library(tidyverse)
