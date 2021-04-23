@@ -1,3 +1,9 @@
+#-----
+# Day 02 #30DayChartChallenge
+# Author: Sarah H
+# Date: 3 Apr 2021
+#-----
+
 extrafont::loadfonts(device = "win", quiet=T)
 library(tidyverse)
 #remotes::install_github("hrbrmstr/waffle")
