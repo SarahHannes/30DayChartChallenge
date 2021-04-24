@@ -83,43 +83,43 @@ p1 <- ggplot() +
   
   # Events annotations
   geom_text_repel(data=events_cl %>% filter(position=='left'), 
-                  aes(x=year, y=0, label=str_wrap(text, 15)),
+                  aes(x=year, y=0, label=paste0(year, "\n", str_wrap(text, 15))),
                   hjust=1,
                   vjust=0,
                   lineheight=0.3,
                   size=8, 
                   max.overlaps = Inf,
                   seed=1,
-                  nudge_x = -0.15,
+                  nudge_x = -1,
                   box.padding = 0.5,
                   nudge_y = -1,
-                  segment.curvature = -0.1,
-                  segment.ncp = 3,
-                  segment.angle = 20,
+                  segment.curvature = -0.025,
+                  segment.ncp = 6,
+                  segment.angle = 100,
                   direction='both',
                   color=annoscol[3],
                   segment.color=annoscol[3],
                   family=font[2]) +
   
   geom_text_repel(data=events_cl %>% filter(position=='right'), 
-                  aes(x=year, y=0, label=str_wrap(text, 15)),
+                  aes(x=year, y=0, label=paste0(year, "\n",str_wrap(text, 15))),
                   hjust=0,
                   vjust=0,
                   lineheight=0.3,
                   size=8, 
                   max.overlaps = Inf,
                   seed=0,
-                  nudge_x = 40,
+                  nudge_x = 10,
                   box.padding = 0.5,
                   nudge_y = -1,
-                  segment.curvature = 0.1,
-                  segment.ncp = 3,
-                  segment.angle = 20,
+                  segment.curvature = 0.025,
+                  segment.ncp = 6,
+                  segment.angle = 100,
                   direction='both',
                   color=annoscol[3],
                   segment.color=annoscol[3],
                   family=font[2]) +
-  
+   
   # Annotation for blanks
   geom_text(aes(x=1998, y=-0.1, label='*'), size=15, color=annoscol[4]) +
   
